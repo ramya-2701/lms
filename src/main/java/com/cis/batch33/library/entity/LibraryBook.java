@@ -1,37 +1,31 @@
 package com.cis.batch33.library.entity;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
-@Table(name="library_member")
+@Table(name="book")
 @Entity
 @Data
-public class LibraryMember {
+public class LibraryBook {
 
     @Id
-    @Column(name="member_id")
-    private Integer memberId;
+    @Column(name="book_id")
+    private Integer bookId;
 
-    @Column(name="first_name")
-    private String firstName;
+    @Column(name="title")
+    private String title;
 
-    @Column(name="last_name")
-    private String lastName;
+    @Column(name="author_name")
+    private String authorName;
 
-    @Column(name="email_address")
-    private String emailAddress;
+    @Column(name="year_published")
+    private Integer yearPublished;
 
-    @Column(name="phone_number")
-    private Long phoneNumber;
+    @Column(name="quantity")
+    private Integer quantity;
 
-    @Column(name="memebership_level")
-    private String memberShipLevel;
-
-    @Column(name="address_id")
-    private Integer addressId;
 
     // lombok
 

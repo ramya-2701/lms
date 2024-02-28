@@ -13,8 +13,9 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    @GetMapping
-    public LibraryMember getMember(Integer memberId){
+
+    @GetMapping("/{memberId}")
+    public LibraryMember getMember(@PathVariable Integer memberId){
         return memberService.getMember(memberId);
     }
 
@@ -23,4 +24,14 @@ public class MemberController {
     public LibraryMember createMember(@RequestBody LibraryMember member){
         return memberService.createMember(member);
     }
+
+    @PutMapping("/{memberId}")
+    public LibraryMember updateMember(@RequestBody LibraryMember member,@PathVariable Integer memberId){
+        return memberService.updateMember(member,memberId);
+    }
+    @DeleteMapping("/{memberId}")
+    public void deleteMember(@PathVariable Integer memberId){
+        memberService.deleteMember(memberId);
+    }
+
 }

@@ -32,6 +32,16 @@ public class MemberService {
        return  memberOptional.orElse(new LibraryMember());
 
     }
+    public LibraryMember updateMember(LibraryMember member,Integer memberId){
+
+        // call the database
+        member.setMemberId(memberId);
+
+        return memberRepository.save(member);
+    }
+    public void deleteMember(Integer memberId){
+        memberRepository.deleteById(memberId);
+    }
 }
 
 // relational databases ( SQL )
