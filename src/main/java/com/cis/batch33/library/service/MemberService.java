@@ -13,20 +13,20 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-public class MemberService {
+public class MemberService{
 
 
     @Autowired
     private LIbraryMemberRepository memberRepository;
 
-    public LibraryMember createMember(Member member){
+    public LibraryMember createMember(LibraryMember member){
     //  map DTO to Entity
 
         // call the database
         Integer memberId = new Random().nextInt();
         member.setMemberId(memberId);
 
-        return memberRepository.save(member);
+       return memberRepository.save(member);
     }
 
     public Member getMember(Integer memberId) {
@@ -68,6 +68,12 @@ public class MemberService {
 
         return member;
     }
+    public LibraryMember updateMember(LibraryMember member) {
+        //Integer memberId = member.getMemberId();
+        //memberMap.put(memberId, LibraryMember);
+        return memberRepository.save(member);
+    }
+
 }
 
 // relational databases ( SQL )

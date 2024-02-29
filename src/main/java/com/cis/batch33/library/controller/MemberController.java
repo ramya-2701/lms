@@ -13,14 +13,15 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    @GetMapping
-    public Member getMember(Integer memberId){
+    @GetMapping("/{memberId}")
+    public Member getMember(@PathVariable Integer memberId){
         return memberService.getMember(memberId);
     }
 
     // create a member
     @PostMapping
-    public LibraryMember createMember(@RequestBody Member member){
+    public LibraryMember createMember(@RequestBody LibraryMember member){
         return memberService.createMember(member);
     }
+
 }
