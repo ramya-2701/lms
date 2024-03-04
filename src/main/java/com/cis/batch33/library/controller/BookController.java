@@ -16,7 +16,7 @@ public class BookController {
     private BookService bookService;
 
     @GetMapping("/{bookId}")
-    public BookDTO getBook(@PathVariable("bookId") Integer bookId){
+    public BookDTO getBook(@PathVariable Integer bookId){
         return bookService.getBook(bookId);
     }
 
@@ -36,7 +36,7 @@ public class BookController {
     }
 
     @DeleteMapping("/{bookId}")
-    public void deleteBook(@PathVariable("bookId") Integer bookId){
+    public void deleteBook(@PathVariable Integer bookId){
          bookService.deleteBook(bookId);
     }
 

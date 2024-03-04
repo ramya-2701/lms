@@ -8,9 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest(classes = { MemberController.class, MemberService.class})
 class LibraryServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
 
-	}
 
 }

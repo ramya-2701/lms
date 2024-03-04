@@ -17,6 +17,6 @@ public class BookIsbn {
     @JoinColumn(name="book_id")
     private Book book;
 
-    @OneToMany(mappedBy = "bookIsbn")
+    @OneToMany(mappedBy = "bookIsbn",cascade = CascadeType.ALL)
     private List<Checkout> checkouts;
 }
